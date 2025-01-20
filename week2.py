@@ -1,0 +1,56 @@
+from tkinter import *
+
+def mainwindow() :
+    
+    master = Tk()
+    master.wm_geometry("1000x700+300+100")
+    master.wm_title("Week2 : Activity by Phuwan")
+    master.configure(bg="#384B70")
+    master.option_add('*font','Poppins 16')
+
+    master.rowconfigure((0,6),weight=3) 
+    master.rowconfigure(5,weight=3) 
+    master.rowconfigure((1,2,3,4),weight=1) 
+
+    master.columnconfigure((0,1),weight=1)
+    return(master)
+
+def widget(master) : 
+
+    heading = Label(master,text="Registration Form",font=('Poppins',22,'bold'),bg="#FCFAEE",fg='#B8001F')
+    heading.grid(row=0,columnspan=2)
+
+    userlabel = Label(master,text="Name : ",bg="#FCFAEE" , fg="#B8001F")
+    userlabel.grid(row=1,column=0,sticky=E)
+
+    pwdlabel = Label(master,text="Student ID : ",bg="#FCFAEE", fg="#B8001F")
+    pwdlabel.grid(row=2,column=0,sticky=E)
+
+    dplabel = Label(master,text="Department : ",bg="#FCFAEE", fg="#B8001F")
+    dplabel.grid(row=3,column=0,sticky=E)
+
+    sqlabel = Label(master,text="Student ID : ",bg="#FCFAEE", fg="#B8001F")
+    sqlabel.grid(row=4,column=0,sticky=E)
+
+    userbox = Entry(master,width=20 , bg="#507687",fg="#ffffff")
+    userbox.grid(row=1,column=1,sticky=W)
+
+    pwdbox = Entry(master,width=20, bg="#507687",show='*' ,fg="#ffffff")
+    pwdbox.grid(row=2,column=1,sticky=W,)
+
+    dpbox = Entry(master,width=20 , bg="#507687",fg="#ffffff")
+    dpbox.grid(row=3,column=1,sticky=W)
+
+    sqbox = Entry(master,width=20 , bg="#507687",fg="#ffffff")
+    sqbox.grid(row=4,column=1,sticky=W)
+
+    btn1 = Button(master,text="CANCEL",width=20 ,bg="#FCFAEE")
+    btn1.grid(row=5,column=0,sticky=E,ipady=8,padx=5)    
+
+    btn2 = Button(master,text="LOGIN",width=20 ,bg="#FCFAEE")
+    btn2.grid(row=5,column=1,sticky=W,ipady=8,padx=5) 
+    
+
+master = mainwindow()
+widget(master)
+master.mainloop()
